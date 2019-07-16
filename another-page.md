@@ -52,7 +52,7 @@ function queryReports() {
 	                expression: 'ga:users'
 	              }
 	            ]
-				//,dimensions: expression: 'ga:deviceCategory'
+				,dimensions: expression: 'ga:deviceCategory'
 	          }
 	        ]
 	      }
