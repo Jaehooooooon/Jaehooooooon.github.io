@@ -52,7 +52,7 @@ function queryReports() {
 					{expression: 'ga:sessions'}
 	            ],
 				dimensions: [
-					{expression: 'ga:userType'}
+					{'name':'ga:userType'}
 				]
 
 	          }
