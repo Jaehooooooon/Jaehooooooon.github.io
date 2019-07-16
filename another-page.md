@@ -49,7 +49,7 @@ function queryReports() {
 	            ],
 	            metrics: [
 	              {
-	                expression: 'ga:CPC'
+	                expression: 'ga:users'
 	              }
 	            ]
 	          }
@@ -65,7 +65,7 @@ function displayResults(response) {
 	    document.getElementById('query-output').value = formattedJson;
 
 		var obj = JSON.parse(formattedJson);
-		console.log('9');
+		console.log('9-1');
 		console.log('a : ', obj);
 		console.log('b : ', obj.reports);
 		console.log('c : ', obj.reports[0]);
