@@ -71,8 +71,10 @@ function displayResults(response) {
 		console.log('11');
 		//console.log('a : ', obj.reports);
 		console.log('a : ', obj.reports[0]);
-		console.log('b : ', obj.reports[0].columnHeader);
-		console.log('c : ', obj.reports[0].data.rows[0])
+		console.log('dimensions: ', obj.reports[0].columnHeader.dimensions);
+		console.log('metricHeaderEntries: ', obj.reports[0].columnHeader.metricHeader.metricHeaderEntries);
+		console.log('dimensions: ', obj.reports[0].data.rows[0].dimensions);
+		console.log('metrics: ', obj.reports[0].data.rows[0].metrics[0].values);
 	  }
 </script>
 	
