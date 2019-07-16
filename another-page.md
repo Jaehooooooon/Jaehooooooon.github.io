@@ -48,9 +48,8 @@ function queryReports() {
 	              }
 	            ],
 	            metrics: [
-	              {
-	                expression: 'ga:users', 'ga:sessions'
-	              }
+	              {	expression: 'ga:users'},
+				  { expression: 'ga:sessions'}
 	            ]
 				
 	          }
