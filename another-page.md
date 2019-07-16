@@ -69,7 +69,7 @@ function displayResults(response) {
 		console.log('a : ', obj);
 		console.log('b : ', obj.reports);
 		console.log('c : ', obj.reports[0]);
-		console.log('d : ', obj.reports[0].columnHeader.metricHeader.metricHeaderEntries[0].name);
+		console.log('d : ', obj.reports[0].columnHeader.metricHeader.metricHeaderEntries);
 		console.log('e : ', obj.reports[0].data.totals[0].values)
 	  }
 </script>
