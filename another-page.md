@@ -65,11 +65,7 @@ function displayResults(response) {
 	    document.getElementById('query-output').value = formattedJson;
 
 		var obj = JSON.parse(formattedJson);
-		console.log('0 : ', obj);
-		console.log('1 : ', obj.columnHeader);
-		console.log('2 : ', obj.metricHeader);
-		console.log('3 : ', obj.metricHeaderEntries);
-		console.log('4 : ', obj.name);
+		console.log('0 : ', obj[0].columnHeader.metricHeader.metricHeaderEntries[0].name);
 	  }
 </script>
 	
