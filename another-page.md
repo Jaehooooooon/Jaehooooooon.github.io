@@ -51,7 +51,12 @@ function queryReports() {
 	              {
 	                expression: 'ga:users'
 	              }
-	            ]
+	            ],
+				dimensions: [
+					{
+						expression: 'ga:deviceCategory'
+					}
+				]
 	          }
 	        ]
 	      }
@@ -65,7 +70,7 @@ function displayResults(response) {
 	    document.getElementById('query-output').value = formattedJson;
 
 		var obj = JSON.parse(formattedJson);
-		console.log('9-1');
+		console.log('10');
 		console.log('a : ', obj);
 		console.log('b : ', obj.reports);
 		console.log('c : ', obj.reports[0]);
