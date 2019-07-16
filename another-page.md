@@ -9,15 +9,16 @@ _hello_
 [back](./)
 
 <html>
+
 <head>
-<meta charset="utf-8">
-<title>Hello Analytics Reporting API V4</title>
-<meta name="google-signin-client_id" content="436705610339-iv7fudo64feeivnd939pqd6df4nu5suv.apps.googleusercontent.com">
-<meta name="google-signin-scope" content="https://www.googleapis.com/auth/analytics.readonly">
+	<meta charset="utf-8">
+	<title>Hello Analytics Reporting API V4</title>
+	<meta name="google-signin-client_id" content="436705610339-iv7fudo64feeivnd939pqd6df4nu5suv.apps.googleusercontent.com">
+	<meta name="google-signin-scope" content="https://www.googleapis.com/auth/analytics.readonly">
 </head>
-<body>
-	
-<h1>Hello Analytics Reporting API V4</h1>
+
+<body>	
+<h1>Hello Analytics Reporting API V4 TEST</h1>
 	
 <!-- The Sign-in button. This will run `queryReports()` on success. -->
 <p class="g-signin2" data-onsuccess="queryReports"></p>
@@ -62,6 +63,12 @@ function displayResults(response) {
 	    var formattedJson = JSON.stringify(response.result, null, 2);
 	    console.log('Results : ', formattedJson);
 	    document.getElementById('query-output').value = formattedJson;
+
+		var obj = JSON.parse(formattedJson);
+		console.log('1 : ', obj.columnHeader);
+		console.log('2 : ', obj.metricHeader);
+		console.log('3 : ', obj.metricHeaderEntries);
+		console.log('4 : ', obj.name);
 	  }
 </script>
 	
