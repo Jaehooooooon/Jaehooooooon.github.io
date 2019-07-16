@@ -68,7 +68,7 @@ function displayResults(response) {
 		console.log('7');
 		console.log('a : ', obj);
 		console.log('b : ', obj.reports);
-		console.log('c : ', obj.reports[""0""]);
+		
 	  }
 </script>
 	
