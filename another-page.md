@@ -48,11 +48,9 @@ function queryReports() {
 	              }
 	            ],
 	            metrics: [
-	              {
-	                expression: 'ga:users'
-	              }
+	              'ga:users', 'ga:sessions'
 	            ]
-				,dimensions: expression: 'ga:deviceCategory'
+	
 	          }
 	        ]
 	      }
