@@ -42,16 +42,19 @@ function queryReports() {
 	          {
 	            viewId: VIEW_ID,
 	            dateRanges: [
-	              {
-	                startDate: '7daysAgo',
-	                endDate: 'yesterday'
-	              }
+	              	{
+	               		startDate: '7daysAgo',
+	                	endDate: 'yesterday'
+	              	}
 	            ],
 	            metrics: [
-	              {	expression: 'ga:users'},
-				  { expression: 'ga:sessions'}
-	            ]
-				
+	            	{expression: 'ga:users'},
+					{expression: 'ga:sessions'}
+	            ],
+				dimensions: [
+					{expression: 'ga:userType'}
+				]
+
 	          }
 	        ]
 	      }
@@ -65,12 +68,11 @@ function displayResults(response) {
 	    document.getElementById('query-output').value = formattedJson;
 
 		var obj = JSON.parse(formattedJson);
-		console.log('10');
-		console.log('a : ', obj);
-		console.log('b : ', obj.reports);
-		console.log('c : ', obj.reports[0]);
-		console.log('d : ', obj.reports[0].columnHeader.metricHeader.metricHeaderEntries);
-		console.log('e : ', obj.reports[0].data.totals[0].values)
+		console.log('11');
+		//console.log('a : ', obj.reports);
+		console.log('a : ', obj.reports[0]);
+		console.log('b : ', obj.reports[0].columnHeader.metricHeader.metricHeaderEntries);
+		console.log('c : ', obj.reports[0].data.totals[0].values)
 	  }
 </script>
 	
