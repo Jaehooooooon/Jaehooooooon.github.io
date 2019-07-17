@@ -51,11 +51,11 @@ function queryReports() {
 	            ],
 	            metrics: [
 	            	{expression: 'ga:users'}
-					
+					{expression: 'ga:sessions'}
 	            ],
 				dimensions: [
-					{'name':'ga:userType'}
-					
+					{'name':'ga:userType'},
+					{'name':'ga:deviceCategory'}
 				]
 
 	          }
@@ -80,11 +80,11 @@ function queryReports() {
 	              	}
 	            ],
 	            metrics: [
-	            	
+	            	{expression: 'ga:users'}
 					{expression: 'ga:sessions'}
 	            ],
 				dimensions: [
-					
+					{'name':'ga:userType'},
 					{'name':'ga:deviceCategory'}
 				]
 
@@ -101,7 +101,7 @@ function displayResults(response) {
 	    document.getElementById('query-output').value += formattedJson;
 
 		var obj = JSON.parse(formattedJson);
-		console.log('13');
+		console.log('14');
 		console.log('a : ', obj.reports);
 		console.log('b : ', obj.reports[0]);
 		console.log('dimensions: ', obj.reports[0].columnHeader.dimensions);
