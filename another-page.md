@@ -61,14 +61,9 @@ function queryReports() {
 	          }
 	        ]
 	      }
-		  queryReports2();
 	    }).then(displayResults, console.error.bind(console));
 	    console.log('finished');
-		queryReports2();
-	  }
-
-function queryReports2() {
-	    console.log('queryReports2 called');
+		console.log('queryReports2 called');
 	    gapi.client.request({
 	      path: '/v4/reports:batchGet',
 	      root: 'https://analyticsreporting.googleapis.com/',
@@ -98,7 +93,7 @@ function queryReports2() {
 	    }).then(displayResults, console.error.bind(console));
 	    console.log('finished');
 	  }
-	
+	  
 function displayResults(response) {
 	    var formattedJson = JSON.stringify(response.result, null, 2);
 	    console.log('Results : ', formattedJson);
