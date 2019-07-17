@@ -33,7 +33,7 @@ var VIEW_ID1 = '197883945';
 var VIEW_ID2 = '198637112';
 	
 // Query the API and print the results to the page.
-function queryReports1() {
+function queryReports() {
 	    console.log('queryReports1 called');
 	    gapi.client.request({
 	      path: '/v4/reports:batchGet',
@@ -61,8 +61,10 @@ function queryReports1() {
 	          }
 	        ]
 	      }
+		  queryReports2();
 	    }).then(displayResults, console.error.bind(console));
 	    console.log('finished');
+		queryReports2();
 	  }
 
 function queryReports2() {
