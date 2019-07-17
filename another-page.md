@@ -22,7 +22,7 @@ _hello_
 <h1>Hello Analytics Reporting API V4 TEST</h1>
 	
 <!-- The Sign-in button. This will run `queryReports()` on success. -->
-<p class="g-signin2" data-onsuccess="test" data-onsuccess="queryReports"></p>
+<p class="g-signin2" data-onsuccess="queryReports"></p>
 	
 <!-- The API response will be printed here. -->
 <textarea cols="80" rows="20" id="query-output"></textarea>
@@ -30,11 +30,7 @@ _hello_
 <script>
 // Replace with your view ID.
 var VIEW_ID1 = '197883945';
-var VIEW_ID2 = '198637112';
-
-function test(){
-	console.log('multiple function console log test');
-}	
+var VIEW_ID2 = '198637112';	
 
 // Query the API and print the results to the page.
 function queryReports() {
@@ -68,35 +64,35 @@ function queryReports() {
 	    }).then(displayResults, console.error.bind(console));
 	    console.log('finished');
 
-		console.log('queryReports2 called');
-	    gapi.client.request({
-	      path: '/v4/reports:batchGet',
-	      root: 'https://analyticsreporting.googleapis.com/',
-	      method: 'POST',
-	      body: {
-	        reportRequests: [
-	          {
-	            viewId: VIEW_ID2,
-	            dateRanges: [
-	              	{
-	               		startDate: '7daysAgo',
-	                	endDate: 'yesterday'
-	              	}
-	            ],
-	            metrics: [
-	            	{expression: 'ga:users'},
-					{expression: 'ga:sessions'}
-	            ],
-				dimensions: [
-					{'name':'ga:userType'},
-					{'name':'ga:deviceCategory'}
-				]
+		// console.log('queryReports2 called');
+	    // gapi.client.request({
+	    //   path: '/v4/reports:batchGet',
+	    //   root: 'https://analyticsreporting.googleapis.com/',
+	    //   method: 'POST',
+	    //   body: {
+	    //     reportRequests: [
+	    //       {
+	    //         viewId: VIEW_ID2,
+	    //         dateRanges: [
+	    //           	{
+	    //            		startDate: '7daysAgo',
+	    //             	endDate: 'yesterday'
+	    //           	}
+	    //         ],
+	    //         metrics: [
+	    //         	{expression: 'ga:users'},
+		// 			{expression: 'ga:sessions'}
+	    //         ],
+		// 		dimensions: [
+		// 			{'name':'ga:userType'},
+		// 			{'name':'ga:deviceCategory'}
+		// 		]
 
-	          }
-	        ]
-	      }
-	    }).then(displayResults, console.error.bind(console));
-	    console.log('finished');
+	    //       }
+	    //     ]
+	    //   }
+	    // }).then(displayResults, console.error.bind(console));
+	    // console.log('finished');
 	  }
 
 function displayResults(response) {
