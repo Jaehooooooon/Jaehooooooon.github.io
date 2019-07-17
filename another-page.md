@@ -50,12 +50,12 @@ function queryReports() {
 	              	}
 	            ],
 	            metrics: [
-	            	{expression: 'ga:users'},
-					// {expression: 'ga:sessions'}
+	            	// {expression: 'ga:users'},
+					{expression: 'ga:sessions'}
 	            ],
 				dimensions: [
-					{'name':'ga:userType'},
-					// {'name':'ga:deviceCategory'}
+					// {'name':'ga:userType'},
+					{'name':'ga:deviceCategory'}
 				]
 
 	          }
