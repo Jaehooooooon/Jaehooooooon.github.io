@@ -97,16 +97,16 @@ function queryReports() {
 function displayResults(response) {
 	    var formattedJson = JSON.stringify(response.result, null, 2);
 	    console.log('Results : ', formattedJson);
-	    document.getElementById('query-output').value = formattedJson;
+	    document.getElementById('query-output').value += formattedJson;
 
 		var obj = JSON.parse(formattedJson);
 		console.log('13');
-		//console.log('a : ', obj.reports);
-		console.log('a : ', obj.reports[0]);
+		console.log('a : ', obj.reports);
+		console.log('b : ', obj.reports[0]);
 		console.log('dimensions: ', obj.reports[0].columnHeader.dimensions);
-		console.log('dimensions: ', obj.reports[0].data.rows);
+		console.log('data.totals: ', obj.reports[0].data.totals);
 		console.log('metricHeaderEntries: ', obj.reports[0].columnHeader.metricHeader.metricHeaderEntries);	
-		console.log('metrics: ', obj.reports[0].data.rows[0].metrics[0].values);
+		//console.log('metrics: ', obj.reports[0].data.rows[0].metrics);
 	  }
 </script>
     <script>
