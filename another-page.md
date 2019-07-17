@@ -29,11 +29,12 @@ _hello_
 	
 <script>
 // Replace with your view ID.
-var VIEW_ID = '197883945';
+var VIEW_ID1 = '197883945';
+var VIEW_ID2 = '198637112';
 	
 // Query the API and print the results to the page.
-function queryReports() {
-	    console.log('queryReports called');
+function queryReports1() {
+	    console.log('queryReports1 called');
 	    gapi.client.request({
 	      path: '/v4/reports:batchGet',
 	      root: 'https://analyticsreporting.googleapis.com/',
@@ -41,7 +42,7 @@ function queryReports() {
 	      body: {
 	        reportRequests: [
 	          {
-	            viewId: VIEW_ID,
+	            viewId: VIEW_ID1,
 	            dateRanges: [
 	              	{
 	               		startDate: '7daysAgo',
@@ -50,10 +51,42 @@ function queryReports() {
 	            ],
 	            metrics: [
 	            	{expression: 'ga:users'},
-					{expression: 'ga:sessions'}
+					
 	            ],
 				dimensions: [
 					{'name':'ga:userType'},
+					
+				]
+
+	          }
+	        ]
+	      }
+	    }).then(displayResults, console.error.bind(console));
+	    console.log('finished');
+	  }
+
+function queryReports2() {
+	    console.log('queryReports2 called');
+	    gapi.client.request({
+	      path: '/v4/reports:batchGet',
+	      root: 'https://analyticsreporting.googleapis.com/',
+	      method: 'POST',
+	      body: {
+	        reportRequests: [
+	          {
+	            viewId: VIEW_ID2,
+	            dateRanges: [
+	              	{
+	               		startDate: '7daysAgo',
+	                	endDate: 'yesterday'
+	              	}
+	            ],
+	            metrics: [
+	            	
+					{expression: 'ga:sessions'}
+	            ],
+				dimensions: [
+					
 					{'name':'ga:deviceCategory'}
 				]
 
@@ -70,7 +103,7 @@ function displayResults(response) {
 	    document.getElementById('query-output').value = formattedJson;
 
 		var obj = JSON.parse(formattedJson);
-		console.log('12');
+		console.log('13');
 		//console.log('a : ', obj.reports);
 		console.log('a : ', obj.reports[0]);
 		console.log('dimensions: ', obj.reports[0].columnHeader.dimensions);
