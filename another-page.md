@@ -50,7 +50,7 @@ function queryReports() {
 	              	}
 	            ],
 	            metrics: [
-	            	{expression: 'ga:users'}
+	            	{expression: 'ga:users'},
 					{expression: 'ga:sessions'}
 	            ],
 				dimensions: [
@@ -80,7 +80,7 @@ function queryReports() {
 	              	}
 	            ],
 	            metrics: [
-	            	{expression: 'ga:users'}
+	            	{expression: 'ga:users'},
 					{expression: 'ga:sessions'}
 	            ],
 				dimensions: [
