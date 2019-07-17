@@ -22,7 +22,7 @@ _hello_
 <h1>Hello Analytics Reporting API V4 TEST</h1>
 	
 <!-- The Sign-in button. This will run `queryReports()` on success. -->
-<p class="g-signin2" data-onsuccess="queryReports"></p>
+<p class="g-signin2" data-onsuccess="queryReports, test"></p>
 	
 <!-- The API response will be printed here. -->
 <textarea cols="80" rows="20" id="query-output"></textarea>
@@ -31,7 +31,11 @@ _hello_
 // Replace with your view ID.
 var VIEW_ID1 = '197883945';
 var VIEW_ID2 = '198637112';
-	
+
+function test(){
+	console.log('multiple function console log test');
+}	
+
 // Query the API and print the results to the page.
 function queryReports() {
 	    console.log('queryReports1 called');
@@ -101,7 +105,7 @@ function displayResults(response) {
 	    document.getElementById('query-output').value += formattedJson;
 
 		var obj = JSON.parse(formattedJson);
-		console.log('14');
+		console.log('15');
 		console.log('a : ', obj.reports);
 		console.log('b : ', obj.reports[0]);
 		console.log('dimensions: ', obj.reports[0].columnHeader.dimensions);
