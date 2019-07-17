@@ -54,8 +54,8 @@ function queryReports() {
 					
 	            ],
 				dimensions: [
+					{'name':'ga:userType'}
 					
-					{'name':'ga:deviceCategory'}
 				]
 
 	          }
@@ -63,6 +63,7 @@ function queryReports() {
 	      }
 	    }).then(displayResults, console.error.bind(console));
 	    console.log('finished');
+
 		console.log('queryReports2 called');
 	    gapi.client.request({
 	      path: '/v4/reports:batchGet',
@@ -83,8 +84,8 @@ function queryReports() {
 					{expression: 'ga:sessions'}
 	            ],
 				dimensions: [
-					{'name':'ga:userType'}
 					
+					{'name':'ga:deviceCategory'}
 				]
 
 	          }
