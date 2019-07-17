@@ -42,7 +42,7 @@ function queryReports() {
 	      body: {
 	        reportRequests: [
 	          {
-	            viewId: VIEW_ID1,
+	            viewId: VIEW_ID2,
 	            dateRanges: [
 	              	{
 	               		startDate: '7daysAgo',
@@ -50,12 +50,12 @@ function queryReports() {
 	              	}
 	            ],
 	            metrics: [
-	            	// {expression: 'ga:users'},
-					{expression: 'ga:sessions'}
+	            	{expression: 'ga:users'},
+					// {expression: 'ga:sessions'}
 	            ],
 				dimensions: [
-					// {'name':'ga:userType'},
-					{'name':'ga:deviceCategory'}
+					{'name':'ga:userType'},
+					// {'name':'ga:deviceCategory'}
 				]
 
 	          }
