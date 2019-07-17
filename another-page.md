@@ -15,6 +15,7 @@ _hello_
 	<title>Hello Analytics Reporting API V4</title>
 	<meta name="google-signin-client_id" content="436705610339-iv7fudo64feeivnd939pqd6df4nu5suv.apps.googleusercontent.com">
 	<meta name="google-signin-scope" content="https://www.googleapis.com/auth/analytics.readonly">
+	<script src="https://d3js.org/d3.v5.min.js"></script>
 </head>
 
 <body>	
@@ -78,7 +79,15 @@ function displayResults(response) {
 		console.log('metrics: ', obj.reports[0].data.rows[0].metrics[0].values);
 	  }
 </script>
-	
+    <script>
+    var myjson={
+        "key1": "value1",
+        "key2": "value2",
+        "key3": "value3",
+        "key4": "value4",
+        "key5": "value5",
+    };
+    </script>
 <!-- Load the JavaScript API client and Sign-in library. -->
 <script src="https://apis.google.com/js/client:platform.js"></script>
 	
