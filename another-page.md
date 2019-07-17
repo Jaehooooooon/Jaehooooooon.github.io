@@ -93,7 +93,7 @@ function queryReports() {
 	    }).then(displayResults, console.error.bind(console));
 	    console.log('finished');
 	  }
-	  
+
 function displayResults(response) {
 	    var formattedJson = JSON.stringify(response.result, null, 2);
 	    console.log('Results : ', formattedJson);
@@ -104,7 +104,7 @@ function displayResults(response) {
 		//console.log('a : ', obj.reports);
 		console.log('a : ', obj.reports[0]);
 		console.log('dimensions: ', obj.reports[0].columnHeader.dimensions);
-		console.log('dimensions: ', obj.reports[0].data.rows[0].dimensions);
+		console.log('dimensions: ', obj.reports[0].data.rows);
 		console.log('metricHeaderEntries: ', obj.reports[0].columnHeader.metricHeader.metricHeaderEntries);	
 		console.log('metrics: ', obj.reports[0].data.rows[0].metrics[0].values);
 	  }
