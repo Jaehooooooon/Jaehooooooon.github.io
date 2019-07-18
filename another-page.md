@@ -42,7 +42,7 @@ function queryReports() {
 	      body: {
 	        reportRequests: [
 	          {
-	            viewId: VIEW_ID2,
+	            viewId: VIEW_ID1,
 	            dateRanges: [
 	              	{
 	               		startDate: '7daysAgo',
@@ -50,11 +50,11 @@ function queryReports() {
 	              	}
 	            ],
 	            metrics: [
-	            	// {expression: 'ga:users'},
+	            	{expression: 'ga:users'},
 					{expression: 'ga:sessions'}
 	            ],
 				dimensions: [
-					// {'name':'ga:userType'},
+					{'name':'ga:userType'},
 					{'name':'ga:deviceCategory'}
 				]
 
@@ -64,35 +64,35 @@ function queryReports() {
 	    }).then(displayResults, console.error.bind(console));
 	    console.log('finished');
 
-		// console.log('queryReports2 called');
-	    // gapi.client.request({
-	    //   path: '/v4/reports:batchGet',
-	    //   root: 'https://analyticsreporting.googleapis.com/',
-	    //   method: 'POST',
-	    //   body: {
-	    //     reportRequests: [
-	    //       {
-	    //         viewId: VIEW_ID2,
-	    //         dateRanges: [
-	    //           	{
-	    //            		startDate: '7daysAgo',
-	    //             	endDate: 'yesterday'
-	    //           	}
-	    //         ],
-	    //         metrics: [
-	    //         	{expression: 'ga:users'},
-		// 			{expression: 'ga:sessions'}
-	    //         ],
-		// 		dimensions: [
-		// 			{'name':'ga:userType'},
-		// 			{'name':'ga:deviceCategory'}
-		// 		]
+		console.log('queryReports2 called');
+	    gapi.client.request({
+	      path: '/v4/reports:batchGet',
+	      root: 'https://analyticsreporting.googleapis.com/',
+	      method: 'POST',
+	      body: {
+	        reportRequests: [
+	          {
+	            viewId: VIEW_ID2,
+	            dateRanges: [
+	              	{
+	               		startDate: '7daysAgo',
+	                	endDate: 'yesterday'
+	              	}
+	            ],
+	            metrics: [
+	            	{expression: 'ga:users'},
+					{expression: 'ga:sessions'}
+	            ],
+				dimensions: [
+					{'name':'ga:userType'},
+					{'name':'ga:deviceCategory'}
+				]
 
-	    //       }
-	    //     ]
-	    //   }
-	    // }).then(displayResults, console.error.bind(console));
-	    // console.log('finished');
+	          }
+	        ]
+	      }
+	    }).then(displayResults, console.error.bind(console));
+	    console.log('finished');
 	  }
 
 function displayResults(response) {
