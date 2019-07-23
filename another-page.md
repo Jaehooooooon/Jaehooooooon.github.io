@@ -29,7 +29,7 @@ _hello_
 	
 <script>
 //varToSet
-var dimensions;
+var sessions;
 
 // Replace with your view ID.
 var VIEW_ID1 = '197883945';
@@ -53,12 +53,12 @@ function queryReports() {
 	              	}
 	            ],
 	            metrics: [
-	            	{expression: 'ga:users'},
+	            	//{expression: 'ga:users'},
 					{expression: 'ga:sessions'}
 	            ],
 				dimensions: [
-					{'name':'ga:userType'},
-					{'name':'ga:deviceCategory'}
+					//{'name':'ga:userType'},
+					//{'name':'ga:deviceCategory'}
 				]
 
 	          }
@@ -83,12 +83,12 @@ function queryReports() {
 	              	}
 	            ],
 	            metrics: [
-	            	{expression: 'ga:users'},
+	            	//{expression: 'ga:users'},
 					{expression: 'ga:sessions'}
 	            ],
 				dimensions: [
-					{'name':'ga:userType'},
-					{'name':'ga:deviceCategory'}
+					//{'name':'ga:userType'},
+					//{'name':'ga:deviceCategory'}
 				]
 
 	          }
@@ -108,16 +108,26 @@ function displayResults(response) {
 		console.log('a : ', obj.reports);
 		console.log('b : ', obj.reports[0]);
 		console.log('dimensions: ', obj.reports[0].columnHeader.dimensions);
-		dimensions = obj.reports[0].columnHeader.dimensions;
 		console.log('data.totals: ', obj.reports[0].data.totals);
 		console.log('metricHeaderEntries: ', obj.reports[0].columnHeader.metricHeader.metricHeaderEntries);	
 		//console.log('metrics: ', obj.reports[0].data.rows[0].metrics);
 
-		test();
+		//test(dimensions);
 	  }
 
-function test() {
+function test(_dimensions) {
 	console.log('test');
+	return new Promise(function (resolve, reject) {
+		fetch(/*parameters*/).then(function (res) {
+			res.json().then(body => {
+
+				var obj = JSON.parse(body)
+
+			}).catch(err => {
+				reject("error fetching.")
+			});
+		});
+	})
 }
 
 </script>
