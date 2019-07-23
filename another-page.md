@@ -100,7 +100,7 @@ function queryReports() {
 
 function displayResults(response) {
 	    var formattedJson = JSON.stringify(response.result, null, 2);
-	    console.log('Results : ', formattedJson);
+	    //console.log('Results : ', formattedJson);
 	    document.getElementById('query-output').value += formattedJson;
 
 		var obj = JSON.parse(formattedJson);
@@ -109,7 +109,7 @@ function displayResults(response) {
 		//console.log('dimensions: ', obj.reports[0].columnHeader.dimensions);
 		//console.log('data.totals: ', obj.reports[0].data.totals);
 		//console.log('metricHeaderEntries: ', obj.reports[0].columnHeader.metricHeader.metricHeaderEntries);	
-		console.log('metrics: ', obj.reports[0].data.rows[0].metrics[0]);
+		console.log('metrics: ', obj.reports[0].data.rows[0].metrics[0].values);
 
 		//test(dimensions);
 	  }
