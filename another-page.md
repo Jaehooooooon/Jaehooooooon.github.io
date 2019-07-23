@@ -28,6 +28,9 @@ _hello_
 <textarea cols="80" rows="20" id="query-output"></textarea>
 	
 <script>
+//varToSet
+var dimensions;
+
 // Replace with your view ID.
 var VIEW_ID1 = '197883945';
 var VIEW_ID2 = '198637112';	
@@ -101,14 +104,22 @@ function displayResults(response) {
 	    document.getElementById('query-output').value += formattedJson;
 
 		var obj = JSON.parse(formattedJson);
-		console.log('15');
+		console.log('16');
 		console.log('a : ', obj.reports);
 		console.log('b : ', obj.reports[0]);
 		console.log('dimensions: ', obj.reports[0].columnHeader.dimensions);
+		dimensions = obj.reports[0].columnHeader.dimensions;
 		console.log('data.totals: ', obj.reports[0].data.totals);
 		console.log('metricHeaderEntries: ', obj.reports[0].columnHeader.metricHeader.metricHeaderEntries);	
 		//console.log('metrics: ', obj.reports[0].data.rows[0].metrics);
+
+		test();
 	  }
+
+function test() {
+	console.log('test');
+}
+
 </script>
     <script>
     var myjson={
