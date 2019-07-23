@@ -105,12 +105,11 @@ function displayResults(response) {
 
 		var obj = JSON.parse(formattedJson);
 		console.log('16');
-		console.log('a : ', obj.reports);
-		console.log('b : ', obj.reports[0]);
-		console.log('dimensions: ', obj.reports[0].columnHeader.dimensions);
-		console.log('data.totals: ', obj.reports[0].data.totals);
-		console.log('metricHeaderEntries: ', obj.reports[0].columnHeader.metricHeader.metricHeaderEntries);	
-		//console.log('metrics: ', obj.reports[0].data.rows[0].metrics);
+		console.log('a : ', obj.reports[0]);
+		//console.log('dimensions: ', obj.reports[0].columnHeader.dimensions);
+		//console.log('data.totals: ', obj.reports[0].data.totals);
+		//console.log('metricHeaderEntries: ', obj.reports[0].columnHeader.metricHeader.metricHeaderEntries);	
+		console.log('metrics: ', obj.reports[0].data.rows[0].metrics[0]);
 
 		//test(dimensions);
 	  }
