@@ -113,7 +113,7 @@ function displayResults(response) {
 		//console.log('data.totals: ', obj.reports[0].data.totals);
 		//console.log('metricHeaderEntries: ', obj.reports[0].columnHeader.metricHeader.metricHeaderEntries);	
 		console.log('metrics: ', obj.reports[0].data.totals[0].values);
-		sessions[i] = obj.reports[0].data.totals[0].values;
+		sessions[i] = obj.reports[0].data.totals[0].values[0];
 		i++;
 
 		//test(dimensions);
