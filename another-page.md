@@ -114,6 +114,7 @@ function displayResults(response) {
 		//console.log('metricHeaderEntries: ', obj.reports[0].columnHeader.metricHeader.metricHeaderEntries);	
 		console.log('metrics: ', obj.reports[0].data.totals[0].values[0]);
 		sessions[i] = obj.reports[0].data.totals[0].values[0];
+		console.log('test1: ', sessions[i]);
 		i++;
 
 		//test(dimensions);
