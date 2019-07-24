@@ -30,8 +30,9 @@ _hello_
 	
 <script>
 //varToSet
-var i = 0;
+var i = 1;
 var sessions = [];
+sessions[0] = 7;
 
 // Replace with your view ID.
 var VIEW_ID1 = '197883945';
@@ -156,7 +157,7 @@ function test(_dimensions) {
 </div>
 
 <script>
-console.log('확인 : ', sessions[0], ', ', sessions[1]);
+console.log('확인 : ', sessions[0], ', ', sessions[1], ', ', sessions[2]);
 var x = 2;
 var ctx = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(ctx, {
@@ -165,7 +166,7 @@ var myChart = new Chart(ctx, {
         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
         datasets: [{
             label: '# of Votes',
-            data: [sessions[0], sessions[1], x, 5, 2, 3],
+            data: [sessions[1], sessions[2], x, 5, 2, 3],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
