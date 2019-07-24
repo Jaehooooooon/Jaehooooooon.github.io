@@ -156,6 +156,7 @@ function test(_dimensions) {
 </div>
 
 <script>
+console.log('확인 : ', sessions[0], ', ', sessions[1]);
 var x = 2;
 var ctx = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(ctx, {
