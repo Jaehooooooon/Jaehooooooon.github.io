@@ -31,7 +31,7 @@ _hello_
 <script>
 //varToSet
 var i = 0;
-var sessions[];
+var sessions = [];
 
 // Replace with your view ID.
 var VIEW_ID1 = '197883945';
