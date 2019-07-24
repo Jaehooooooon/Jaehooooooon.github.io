@@ -109,7 +109,8 @@ function displayResults(response) {
 		//console.log('dimensions: ', obj.reports[0].columnHeader.dimensions);
 		//console.log('data.totals: ', obj.reports[0].data.totals);
 		//console.log('metricHeaderEntries: ', obj.reports[0].columnHeader.metricHeader.metricHeaderEntries);	
-		console.log('metrics: ', obj.reports[0].data.rows[0].metrics[0].values);
+		console.log('metrics: ', obj.reports[0].data.totals[0].values);
+		sessions = obj.reports[0].data.rows[0].metrics[0].values;
 
 		//test(dimensions);
 	  }
