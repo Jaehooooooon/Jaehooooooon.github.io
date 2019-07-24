@@ -30,7 +30,8 @@ _hello_
 	
 <script>
 //varToSet
-var sessions;
+var i = 0;
+var sessions[];
 
 // Replace with your view ID.
 var VIEW_ID1 = '197883945';
@@ -111,7 +112,8 @@ function displayResults(response) {
 		//console.log('data.totals: ', obj.reports[0].data.totals);
 		//console.log('metricHeaderEntries: ', obj.reports[0].columnHeader.metricHeader.metricHeaderEntries);	
 		console.log('metrics: ', obj.reports[0].data.totals[0].values);
-		sessions = obj.reports[0].data.totals[0].values;
+		sessions[i] = obj.reports[0].data.totals[0].values;
+		i++;
 
 		//test(dimensions);
 	  }
@@ -151,12 +153,6 @@ function test(_dimensions) {
     <div class="input">
         1 : <input id="firstChartInput" type="text">
     </div>
-    <div class="input">
-        2 : <input id="secondChartInput" type="number">
-    </div>  
-    <div class="input">
-        3 : <input id="thirdChartInput" type="number">
-    </div>  
 </div>
 
 <script>
@@ -168,7 +164,7 @@ var myChart = new Chart(ctx, {
         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
         datasets: [{
             label: '# of Votes',
-            data: [x, x, x, 5, 2, 3],
+            data: [sessions[0], sessions[1], x, 5, 2, 3],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
